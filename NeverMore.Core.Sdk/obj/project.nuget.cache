@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "r8BJVF2hc60=",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio\\Projects\\Crexium\\Crexium Infra\\02 - APPS\\NeverMore\\NeverMore.Core.Sdk\\Nevermore.Core.Sdk.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emily.pazereckas.CRX\\.nuget\\packages\\lz4net\\1.0.15.93\\lz4net.1.0.15.93.nupkg.sha512",
+    "C:\\Users\\emily.pazereckas.CRX\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\emily.pazereckas.CRX\\.nuget\\packages\\system.runtime.loader\\4.3.0\\system.runtime.loader.4.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

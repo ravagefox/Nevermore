@@ -1,0 +1,1101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NeverMore.Core.Sdk</name>
+    </assembly>
+    <members>
+        <member name="T:Nevermore.Core.Sdk.AccountFlags">
+            <summary>
+            Flags to display access for a users account
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.AccountFlags.PasswordChangeRequired">
+            <summary>
+            A user must change their password when they log
+            into any service for the first time
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.AccountUpdateType">
+            <summary>
+            Properties that can be updated on the users account
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.ApiKeyFlags">
+            <summary>
+            State flags for an API key
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.ApiPermissionSet">
+            <summary>
+            Permissions used by the Client Api-Secret authentication
+            method
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ApiPermissionSet.Inactive">
+            <summary>
+            The Api key is currently inactive and cannot be used
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ApiPermissionSet.ReadOnly">
+            <summary>
+            The api key provided can only read data
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ApiPermissionSet.WriteOnly">
+            <summary>
+            The api key can only write data
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ApiPermissionSet.ReadWrite">
+            <summary>
+            The api key can read and write data
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ApiPermissionSet.FullControl">
+            <summary>
+            Full control is only limited to the creator user
+            to prevent any unauthorised management of assets
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.NeverMoreAuthOpCodes">
+            <summary>
+            Operation codes that are used to invoke an action on
+            the server
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.DataModels.AccountInfo">
+            <summary>
+            Definition for base level account information
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.Id">
+            <summary>
+            Gets or sets the id of the account
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.Name">
+            <summary>
+            Gets or sets the username of the account.
+            (Don't mistake this for the name of the creator)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.Email">
+            <summary>
+            Gets or sets the email of the account
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.Password">
+            <summary>
+            Gets or sets the password that the account has
+            (This property is always omitted from JSON
+            serialization)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.PasswordSalt">
+            <summary>
+            Gets or sets the salt used by the password.
+            (This property is always omitted from JSON
+            serialization)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.Flags">
+            <summary>
+            Gets or sets the current account flags
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.CreatedDateTime">
+            <summary>
+            Gets or sets the date and time that the 
+            account was created in UTC
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.AccountInfo.LastAccess">
+            <summary>
+            Gets or sets the last access date and time
+            in UTC
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.DataModels.ApiKeyInfo">
+            <summary>
+            Definition for an API key
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.Id">
+            <summary>
+            Gets or sets the id of the api key
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.Name">
+            <summary>
+            Gets or sets the name of the key.
+            (This is ignored)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.Permissions">
+            <summary>
+            Gets or sets the permissions of the api key
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.CreatorId">
+            <summary>
+            Gets or sets the creator account id
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.ServiceId">
+            <summary>
+            Gets or sets the service that this key will
+            be used for
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.ApiKey">
+            <summary>
+            Gets or sets the key that is attached
+            to the current instance
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.SecretKey">
+            <summary>
+            Gets or sets the api key secret that is
+            attached to the current instance
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ApiKeyInfo.Flags">
+            <summary>
+            Gets or sets the flags of the current 
+            instance
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.DataModels.BoundServiceInfo">
+            <summary>
+            Definition of whether a user has access to a service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.Id">
+            <summary>
+            Gets or sets the id of the service to bind
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.Name">
+            <summary>
+            Gets or sets the name of the service.
+            (This is ignored)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.ServiceId">
+            <summary>
+            Gets or sets the service name that was bound
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.AccountId">
+            <summary>
+            Gets or sets the account that has the service
+            currently bound
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.AssignedDateTime">
+            <summary>
+            Gets or sets the assigned date and time that 
+            the service was activated in UTC
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.State">
+            <summary>
+            Gets or sets the current state of the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.BoundServiceInfo.TrialDuration">
+            <summary>
+            Gets or sets the trial duration for the bound
+            service in ticks
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.DataModels.ServiceInfo">
+            <summary>
+            Definition for management of service information
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.Id">
+            <summary>
+            Gets or sets the id of the service.
+            (In all events of newly created ones, this is 
+            automatically generated)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.Name">
+            <summary>
+            Gets or sets the name of the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.Description">
+            <summary>
+            Gets or sets the description of the 
+            service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.Created">
+            <summary>
+            Gets or sets the time in UTC of when
+            the service was created
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.SupportedAuthentication">
+            <summary>
+            Gets or sets the supported authentication 
+            policies of the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.Flags">
+            <summary>
+            Gets or sets the flags of the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.AccountOwnerId">
+            <summary>
+            Gets or sets the account that owns the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.ServiceAgentId">
+            <summary>
+            Gets or sets the agent who authorised the creation
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.DataModels.ServiceInfo.ServiceWebsite">
+            <summary>
+            Gets or sets the services website, this is used primarily
+            for password resets
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.FlexMessageAttribute">
+            <summary>
+            Default instance for exposing methods to handle data
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.FlexMessageAttribute.#ctor">
+            <summary>
+            Initializes a new instance
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.FlexMessageAttribute.#ctor(Nevermore.Core.Sdk.NeverMoreAuthOpCodes)">
+            <summary>
+            Initializes a new instance with the given op code
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.FlexMessageAttribute.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance with a custom hook op code
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.NevermorePlugin">
+            <summary>
+            Provides accessibility for new additional programs that 
+            can run within the Nevermore
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.NevermorePlugin.CustomHooks">
+            <summary>
+            Gets or sets the custom hooks that the plugin will use.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.NevermorePlugin.Id">
+            <inheritdoc/>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.NevermorePlugin.Name">
+            <inheritdoc/>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.NevermorePlugin.Initialize(System.Object)">
+            <summary>
+            Initializes the plugin
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.NevermorePlugin.Unload">
+            <summary>
+            Unloads the current context from Nevermore.
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Account.Requests.AccountUpdateRequest">
+            <summary>
+            A request used to update account information
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AccountUpdateRequest.AccountId">
+            <summary>
+            Gets or sets the account id to update
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AccountUpdateRequest.Data">
+            <summary>
+            Gets or sets the new data to be submitted
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AccountUpdateRequest.ConfirmationKey">
+            <summary>
+            Gets or sets the confirmation key of any 
+            pre-existing data that needs to be verified for
+            a change to take place. ie password change, or email update
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AccountUpdateRequest.UpdateType">
+            <summary>
+            Gets or sets the name of the property to update on the account
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Requests.AccountUpdateRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns>Returns the encoded data packet</returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest">
+            <summary>
+            A request used to authenticate a user
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest.ServiceId">
+            <summary>
+            Gets or sets the service the account
+            is trying to log into
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest.UsernameOrEmail">
+            <summary>
+            Gets or sets the username or email
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest.AccountId">
+            <summary>
+            Gets or sets the account id, in place of 
+            <see cref="P:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest.UsernameOrEmail"/> being null, or empty
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest.Password">
+            <summary>
+            Gets or sets the password that was submitted
+            to authenticate with
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Requests.AuthenticateRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns>Returns the encoded data packet</returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Account.Requests.NewAccountRequest">
+            <summary>
+            A request to submit account creation
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.NewAccountRequest.UsernameOrEmail">
+            <summary>
+            Gets or sets the username or email of the 
+            new account
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.NewAccountRequest.Password">
+            <summary>
+            Gets or sets the password that will be used
+            when creating a new account.
+            (If none is specified, then the account will
+            automatically generate a password)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Requests.NewAccountRequest.ServicesToActivate">
+            <summary>
+            Gets or sets the optional services that
+            will be automatically applied to the account
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Requests.NewAccountRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse">
+            <summary>
+            A response used for the authentication request status
+            for the request
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.Id">
+            <summary>
+            Gets or sets the id of the response
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.Name">
+            <summary>
+            Gets or sets the credential that was used for the response.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.Success">
+            <summary>
+            Gets or sets the status of the packet.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.Code">
+            <summary>
+            Gets or sets the authentication response code
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.AccountId">
+            <summary>
+            Gets or sets the account id that was used to login.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.SessionId">
+            <summary>
+            Gets or sets the session token value.
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.ToString(System.Boolean)">
+            <summary>
+            Returns the current instance as a serialized JSON object.
+            </summary>
+            <param name="indent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Responses.AuthenticateResponse.ToString">
+            <summary>
+            When overriden in a derrived class, serializes the current instance
+            to json format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse">
+            <summary>
+            Provides a response for when an account has been newly created.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse.Id">
+            <summary>
+            Gets or sets the Id of the response.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse.Name">
+            <summary>
+            Gets or sets the account user credential.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse.Success">
+            <summary>
+            Gets or sets the status of the packet.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse.AccountId">
+            <summary>
+            Gets or sets the account of the newly created account.
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse.ToString(System.Boolean)">
+            <summary>
+            Returns the current instance as a serialized JSON object.
+            </summary>
+            <param name="indent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Account.Responses.NewAccountResponse.ToString">
+            <summary>
+            When overriden in a derrived class, serializes the current instance
+            to json format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyDeleteRequest">
+            <summary>
+            A request used to delete a key from the security
+            database
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyDeleteRequest.ApiKeyId">
+            <summary>
+            Gets or sets the API Key Id that will
+            be deleted
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyDeleteRequest.AccountId">
+            <summary>
+            Gets or sets the account owner that is making
+            the delete request
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyDeleteRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyListRequest">
+            <summary>
+            A request used by the administrator to retrieve
+            the API keys associated with the account id
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyListRequest.OwnerId">
+            <summary>
+            Gets or sets the account ownership
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyListRequest.MinPermissions">
+            <summary>
+            Gets or sets the level of permissions
+            that will be requested
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Api.Requests.ApiKeyListRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Api.Requests.ApiValidateRequest">
+            <summary>
+            A request to validate a key against the security
+            database
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.ApiValidateRequest.ApiKey">
+            <summary>
+            Gets or sets the key specific
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.ApiValidateRequest.ApiSecret">
+            <summary>
+            Gets or sets the secret that will be used
+            to verify the key
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Api.Requests.ApiValidateRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Api.Requests.CreateApiKeyRequest">
+            <summary>
+            A request used to create an API key and 
+            attach it to a service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.CreateApiKeyRequest.OwnerId">
+            <summary>
+            Gets or sets the owner that will 
+            have the key bound to
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.CreateApiKeyRequest.ServiceId">
+            <summary>
+            Gets or sets the service id that the key 
+            will be bound to
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Requests.CreateApiKeyRequest.Permissions">
+            <summary>
+            Gets or sets the permission level of the 
+            newly created api key
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Api.Requests.CreateApiKeyRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse">
+            <summary>
+            A response used to display all the keys that 
+            are accessible to the requesting user
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse.Id">
+            <summary>
+            Gets or sets the id of the listed response
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse.Name">
+            <summary>
+            (THIS PROPERTY IS IGNORED)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse.Success">
+            <summary>
+            Gets or sets the status of the packet.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse.ApiKeyIds">
+            <summary>
+            Gets or sets the list of API keys that
+            were found on the account.
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse.ToString(System.Boolean)">
+            <summary>
+            Returns the current instance as a serialized JSON object.
+            </summary>
+            <param name="indent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Api.Responses.ApiListResponse.ToString">
+            <summary>
+            When overriden in a derrived class, serializes the current instance
+            to json format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Containers.Requests.ContainerCreateRequest">
+            <summary>
+            A request body for creating containers
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Containers.Requests.ContainerCreateRequest.ServiceId">
+            <summary>
+            Gets or sets the service id to create
+            the container for
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Containers.Requests.ContainerCreateRequest.AccountId">
+            <summary>
+            Gets or sets the account for verification of 
+            container creation
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Containers.Requests.ContainerCreateRequest.Success">
+            <summary>
+            Gets or sets the status of the packet.
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.JsonDataErrorResponse">
+            <summary>
+            A default response model to tell the user that they messed 
+            up somewhere
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.JsonDataErrorResponse.Id">
+            <summary>
+            Gets or sets the id for the response
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.JsonDataErrorResponse.Name">
+            <summary>
+            Gets or sets the detailed message title, 
+            or short hand description
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.JsonDataErrorResponse.Success">
+            <summary>
+            Gets or sets the status of the packet.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.JsonDataErrorResponse.Errors">
+            <summary>
+            Gets or sets the array of detailed messages showing
+            how many times a user has messed up
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.JsonDataErrorResponse.ToString(System.Boolean)">
+            <summary>
+            Returns the current instance as a serialized JSON object.
+            </summary>
+            <param name="indent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.JsonDataErrorResponse.ToString">
+            <summary>
+            When overriden in a derrived class, serializes the current instance
+            to json format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.MFA.Requests.MfaValidateRequest">
+            <summary>
+            A request to provide two factor authentication
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Requests.MfaValidateRequest.Token">
+            <summary>
+            Gets or sets the token that will be used
+            to validate against
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Requests.MfaValidateRequest.AccountId">
+            <summary>
+            Gets or sets the account id to create
+            a validating token for
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.MFA.Requests.MfaValidateRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.MFA.Responses.MfaValidateResponse">
+            <summary>
+            A response for validated MFA codes.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Responses.MfaValidateResponse.Id">
+            <summary>
+            Gets or sets the id of the packet
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Responses.MfaValidateResponse.Name">
+            <summary>
+            Gets or sets the account used to validate the request.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Responses.MfaValidateResponse.Success">
+            <summary>
+            Gets or sets the status of the packet.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Responses.MfaValidateResponse.AccountId">
+            <summary>
+            Gets or sets the account id that was used to validate 
+            the request.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.MFA.Responses.MfaValidateResponse.Code">
+            <summary>
+            Gets or sets the successful status message for 
+            the validation.
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Services.Requests.ActivateServiceRequest">
+            <summary>
+            A request to submit for a newly activated service on
+            a user's account
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.ActivateServiceRequest.ServiceId">
+            <summary>
+            Gets or sets the service to activate
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.ActivateServiceRequest.AccountId">
+            <summary>
+            Gets or sets the account id to activate on
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.ActivateServiceRequest.UsernameOrEmail">
+            <summary>
+            Gets or sets the username or email to locate,
+            if an account id was not provided.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.ActivateServiceRequest.OwnerId">
+            <summary>
+            Gets or sets the owner id of the service to activate.
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Services.Requests.ActivateServiceRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Services.Requests.CreateServiceRequest">
+            <summary>
+            A request used to create a service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.CreateServiceRequest.Name">
+            <summary>
+            Gets or sets the name of the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.CreateServiceRequest.Description">
+            <summary>
+            Gets or sets the description for the service.
+            (This is used for management of the service)
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.CreateServiceRequest.IsFreeService">
+            <summary>
+            Gets or sets the state of whether
+            the service requires a subscription or not
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.CreateServiceRequest.OwnerId">
+            <summary>
+            Gets or sets the owner of the newly created service
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Services.Requests.CreateServiceRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Services.Requests.DeactivateServiceRequest">
+            <summary>
+            A request made by a user to deactivate a service 
+            on their account
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.DeactivateServiceRequest.ServiceId">
+            <summary>
+            Gets or sets the id for the service
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.DeactivateServiceRequest.AccountId">
+            <summary>
+            Gets or sets the id of the account which
+            needs the service deactivated
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Requests.DeactivateServiceRequest.OwnerId">
+            <summary>
+            Gets or sets the owner of the service to deactivate
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Json.Services.Requests.DeactivateServiceRequest.GetEncoder">
+            <summary>
+            Returns the encoder that will be used to serialize the data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Json.Services.Responses.ServiceActivateResponse">
+            <summary>
+            General response for when a service has been activated
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Responses.ServiceActivateResponse.Id">
+            <summary>
+            Gets or sets the id of the response
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Responses.ServiceActivateResponse.Name">
+            <summary>
+            Gets or sets the username or email that was
+            activated
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Json.Services.Responses.ServiceActivateResponse.Status">
+            <summary>
+            Gets or sets the activation status for the account
+            specified
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.LogInfo">
+            <summary>
+            Provides support for basic log information
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.LoginStatusCode">
+            <summary>
+            Status codes which are prompted when a user authenticates with 
+            the server
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.Success">
+            <summary>
+            Successfully authenticated
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.TrialExpired">
+            <summary>
+            Trial has expired and the account must make payment
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.InvalidCredentials">
+            <summary>
+            The user supplied invalid credentials
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.ServiceBlocked">
+            <summary>
+            The service is blocked from access
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.RequiresMfa">
+            <summary>
+            The account requires a form of two factor authentication
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.IsBanned">
+            <summary>
+            The account is currently banned from access
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.RequiresPayment">
+            <summary>
+            The account requires a payment to be made to regain access
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.LoginStatusCode.InvalidMfaCode">
+            <summary>
+            The two factor code provided was invalid
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.Net.NevermoreClient">
+            <summary>
+            Provides a Client access point for communications with the 
+            Nevermore Services
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Net.NevermoreClient.Rsa">
+            <summary>
+            Gets or sets the RSA encryption handler
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.Net.NevermoreClient.IsEncrypted">
+            <summary>
+            Gets or sets whether the client is currently encrypted
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Net.NevermoreClient.#ctor">
+            <summary>
+            Initializes a new instance, with the connection point
+            to the server
+            </summary>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Net.NevermoreClient.ImportAsmTypes(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Import a set of types into the client.
+            </summary>
+            <param name="types"></param>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Net.NevermoreClient.OnClientConnected(System.Object,System.EventArgs)">
+            <summary>
+            When overriden in a derrived class, handles the connection
+            state when the client has connected
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Net.NevermoreClient.OnSendTo(System.Int32,System.Byte[],System.Net.IPEndPoint)">
+            <summary>
+            When overriden in a derrived class, handles the data that was
+            sent to the server
+            </summary>
+            <param name="bytesSent"></param>
+            <param name="data"></param>
+            <param name="ep"></param>
+        </member>
+        <member name="M:Nevermore.Core.Sdk.Net.NevermoreClient.OnReceiveFrom(System.Int32,System.Byte[])">
+            <summary>
+            When overriden in a derrived class, handles the incoming data
+            from the server
+            </summary>
+            <param name="bytesReceived"></param>
+            <param name="buffer"></param>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.NevermoreFlexParams">
+            <summary>
+            Startup parameters for the flex environment.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.NevermoreFlexParams.ServiceProvider">
+            <summary>
+            Gets the current service provider for the application.
+            </summary>
+        </member>
+        <member name="P:Nevermore.Core.Sdk.NevermoreFlexParams.FlexHandler">
+            <summary>
+            Gets the current flex instance.
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.ServiceActivateReason">
+            <summary>
+            Activate reasons used when a client is attempting 
+            to activate a service.
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceActivateReason.Success">
+            <summary>
+            OK
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceActivateReason.IncorrectOwner">
+            <summary>
+            Service attempting to activate, is being attempted by
+            an unauthorised account
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceActivateReason.GeneralFailure">
+            <summary>
+            General server failure, try again later
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceActivateReason.PaymentRequired">
+            <summary>
+            The service requires a payment to be made to 
+            activate, this includes subscriptions and one time
+            payments
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceActivateReason.RegionForbidden">
+            <summary>
+            The country, or locale attempting to activate is
+            forbidden
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceActivateReason.ServiceAlreadyActivated">
+            <summary>
+            The service has already been activated on the target
+            account
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.ServiceInfoFlags">
+            <summary>
+            Flags to describe service information
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceInfoFlags.None">
+            <summary>
+            No flags applied
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceInfoFlags.IsFree">
+            <summary>
+            The service is provided freely
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceInfoFlags.IsSubscription">
+            <summary>
+            The service requires a subscription to use
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.ServiceInfoFlags.IsActive">
+            <summary>
+            The service is currently active, no active flag means its disabled.
+            </summary>
+        </member>
+        <member name="T:Nevermore.Core.Sdk.BoundServiceState">
+            <summary>
+            Status for a service which is attached to an account
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.BoundServiceState.Invalid">
+            <summary>
+            No state could be identified
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.BoundServiceState.IsFrozen">
+            <summary>
+            The service is currently frozen to the user
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.BoundServiceState.IsActive">
+            <summary>
+            Service is currently active without interruption
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.BoundServiceState.IsTrial">
+            <summary>
+            A trial period has been applied
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.BoundServiceState.PaymentRequired">
+            <summary>
+            Payment is required to reactivate the service on the account
+            </summary>
+        </member>
+        <member name="F:Nevermore.Core.Sdk.BoundServiceState.IsBanned">
+            <summary>
+            The service is currently blocked until this is resolved
+            </summary>
+        </member>
+    </members>
+</doc>

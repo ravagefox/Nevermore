@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<BaseOutputPath>..\..\..\04 - BUILD\Apps\Nevermore\Nevermore.Core.Sdk\</BaseOutputPath>
+		<Platforms>x64</Platforms>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Json\Services\Responses\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\00 - CORE\Crexium.Core\Crexium.Core.csproj" />
+	  <ProjectReference Include="..\..\..\00 - CORE\Crexium.Net.Flex\Crexium.Net.Flex.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Crexium.Core">
+	    <HintPath>..\..\..\04 - BUILD\Infra\x64\Debug\netstandard2.0\Crexium.Core.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Crexium.Diagnostics">
+	    <HintPath>..\..\..\04 - BUILD\Infra\x64\Debug\netstandard2.0\Crexium.Diagnostics.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Crexium.IO">
+	    <HintPath>..\..\..\04 - BUILD\Infra\x64\Debug\netstandard2.0\Crexium.IO.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Crexium.IO.Sql">
+	    <HintPath>..\..\..\04 - BUILD\Infra\x64\Debug\netstandard2.0\Crexium.IO.Sql.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Crexium.Net">
+	    <HintPath>..\..\..\04 - BUILD\Infra\x64\Debug\netstandard2.0\Crexium.Net.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Crexium.Net.Http">
+	    <HintPath>..\..\..\04 - BUILD\Infra\x64\Debug\netstandard2.0\Crexium.Net.Http.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+</Project>

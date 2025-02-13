@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = Nevermore.Core.Sdk
+build_property.ProjectDir = D:\Visual Studio\Projects\Crexium\Crexium Infra\02 - APPS\Nevermore\Nevermore.Core.Sdk\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
